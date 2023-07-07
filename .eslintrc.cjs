@@ -5,20 +5,18 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    'plugin:@typescript-eslint/recommended',
     "plugin:react/recommended",
     "airbnb",
     "airbnb/hooks",
     "prettier",
   ],
   overrides: [],
-  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
     project: "./jsconfig.json",
   },
-  plugins: ["react", '@typescript-eslint'],
+  plugins: ["react"],
   rules: {
     "import/no-extraneous-dependencies": [
       "error",
