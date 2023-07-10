@@ -1,4 +1,6 @@
-.privateLayout{
+@import "src/consts/colors";
+
+.publicLayout{
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100vh;
@@ -18,4 +20,11 @@
   height: 100%;
   object-fit: cover;
   border-radius: 30px;
+}
+
+.copyright{
+  text-align: center;
+  margin-top: -15px;
+  text-transform: uppercase;
+  color: $gray
 }

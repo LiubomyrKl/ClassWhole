@@ -3,13 +3,19 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import FormInput from "@/components/FormInput";
 import * as Yup from "yup"
 import { yupResolver } from '@hookform/resolvers/yup';
+import Button from "@/components/common/Button";
+import AppLink from "@/components/common/Link";
+import classes from './SignInForm.module.scss'
+import cx from 'classnames';
+import LineWithText from "@/components/common/LineWithText";
+import Paths from "@/routes/Paths";
 
 type Inputs = {
     email: string
     password: string
 }
 
-const LoginForm = () => {
+const SignInForm: React.FC = () => {
 
     const formSchema = Yup.object().shape({
         email: Yup.string()
@@ -17,9 +23,6 @@ const LoginForm = () => {
             .email('Invalid email address'),
         password: Yup.string()
             .required("Password is required")
-            .min(4, "Password length should be at least 8 characters")
-            .max(12, "Password cannot exceed more than 12 characters")
-            .oneOf([Yup.ref("password")], "Passwords do not match")
     });
 
     const {
@@ -48,8 +51,17 @@ const LoginForm = () => {
                 type='password'
                 placeholder='At least 8 characters'
             />
+            <AppLink
+                to={Paths.resetPassword}
+                className={cx(classes.forgotPasswordLink, 'mb-15')}>
+                Forgot Password
+            </AppLink>
+            <Button className='mb-30'>
+                Sign In
+            </Button>
+            <LineWithText text='Or' className='mb-30'/>
         </form>
     );
 };
 
-export default LoginForm;
+export default SignInForm;

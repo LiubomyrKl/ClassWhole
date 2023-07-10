@@ -1,6 +1,6 @@
 @import "src/consts/colors";
 .formInputWrapper{
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .formInputLabelWrapper{
@@ -16,6 +16,7 @@
 .formInput{
   width: 100%;
   padding: 10px;
+  border: 1.5px solid $darkGray;
   border-radius: 10px;
   margin-bottom: 5px;
 

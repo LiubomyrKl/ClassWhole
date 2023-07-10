@@ -7,9 +7,10 @@ interface IPrivateLayoutProps{
 }
 const PublicLayout: React.FC<IPrivateLayoutProps> = ({children}) => {
     return (
-        <div className={classes.privateLayout}>
+        <div className={classes.publicLayout}>
             <div>
                 {children}
+                <div className={classes.copyright}>© 2023 all rights reserved</div>
             </div>
             <div className={classes.seasonIllustrationWrapper}>
                 <img className={classes.seasonIllustration} src={Summer} alt="Season"/>

@@ -5,6 +5,7 @@ import cx from 'classnames';
 
 interface IFormInputProps extends IInputProps{
     success?: boolean;
+    type: string;
 }
 
 const FormInput = ({
@@ -15,17 +16,19 @@ const FormInput = ({
     register,
     name,
     success = false,
+    type
 }:IFormInputProps) => {
 
     const inputClasses = cx(classes.formInput, {
-        'error': classes.error,
-        'success': classes.success,
+        [classes.error]: error,
+        [classes.success]: success,
     })
 
     return (
         <div className={classes.formInputWrapper}>
             {label && <label className={classes.formInputLabel}>{label}</label>}
             <input
+                type={type}
                 name={name}
                 {...register}
                 placeholder={placeholder}

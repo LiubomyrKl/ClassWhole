@@ -24,9 +24,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-body {
-    line-height: 1;
-}
+
 ol, ul {
     list-style: none;
 }
@@ -42,10 +40,29 @@ table {
     border-spacing: 0;
 }
 
+a{
+    display: block;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
 *,
 *:after,
 *:before{
     box-sizing: border-box;
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    border-spacing: 0;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
 }
 
 @font-face {
@@ -104,6 +121,10 @@ body{
 
 }
 
+.mb-15{
+    margin-bottom: 15px;
+}
+
 .mb-20{
     margin-bottom: 20px;
 }
@@ -114,4 +135,12 @@ body{
 
 .mb-50{
     margin-bottom: 50px;
+}
+
+.text-align-right{
+    text-align: right;
+}
+
+.text-align-center{
+    text-align: center;
 }

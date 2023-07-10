@@ -1,17 +1,24 @@
 import React from "react";
 import './App.scss'
-import {BrowserRouter, Route, RouterProvider, Routes} from "react-router-dom";
-import Login from "@/pages/Login";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Login from "@/pages/SignIn";
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import Paths from "@/routes/Paths";
+import ResetPassword from "@/pages/ResetPassword";
+import SignUp from "@/pages/SignUp";
 
 const App = () => (
-      // eslint-disable-next-line react/jsx-filename-extension
-    <BrowserRouter>
-        <div className="App">
-            <Routes>
-                <Route path="/login" element={ <Login/> } />
-            </Routes>
-        </div>
-    </BrowserRouter>
+    <GoogleOAuthProvider clientId='dasdas'>
+        <BrowserRouter>
+            <div className="App">
+                <Routes>
+                    <Route path={Paths.signIn} element={ <Login/> } />
+                    <Route path={Paths.resetPassword} element={ <ResetPassword/> } />
+                    <Route path={Paths.signUp} element={ <SignUp/> } />
+                </Routes>
+            </div>
+        </BrowserRouter>
+    </GoogleOAuthProvider>
   )
 
 export default App
