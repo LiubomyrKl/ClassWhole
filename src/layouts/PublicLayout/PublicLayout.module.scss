@@ -1,0 +1,21 @@
+.privateLayout{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  padding: 15px;
+  overflow: hidden;
+}
+
+.seasonIllustrationWrapper{
+  position: relative;
+}
+
+.seasonIllustration{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}

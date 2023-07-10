@@ -1,7 +1,7 @@
 import React from "react";
-import './App.css'
+import './App.scss'
 import {BrowserRouter, Route, RouterProvider, Routes} from "react-router-dom";
-import Login from "@/pages/login";
+import Login from "@/pages/Login";
 
 const App = () => (
       // eslint-disable-next-line react/jsx-filename-extension

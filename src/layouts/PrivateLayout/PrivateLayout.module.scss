@@ -1,0 +1,14 @@
+.privateLayout{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.seasonIllustration{
+  padding: 30px;
+  border-radius: 30px;
+  height: 100%;
+  background-image: url("../../assets/images/PublicLayout/summer.jpeg");
+}
+
