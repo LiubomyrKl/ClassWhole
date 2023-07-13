@@ -1,17 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import classes from './PrivateLayout.module.scss';
-import Summer from "@/assets/images/PublicLayout/summer.jpeg";
+import Sider from "@/layouts/PrivateLayout/components/Sider";
+import cx from 'classnames';
+import Header from "@/layouts/PrivateLayout/components/Header";
 
 interface IPrivateLayoutProps{
     children: React.ReactNode;
 }
 const PrivateLayout: React.FC<IPrivateLayoutProps> = ({children}) => {
+    const [isSiderOpen, setIsSiderOpen] = useState(true);
+
+    const defaultMenuItems = [{
+        label: 'Calendar',
+        url: '/calendar',
+    }]
+
+    //here is going to be computing the sider content, etc.
     return (
         <div className={classes.privateLayout}>
-            <div>
-                {children}
+            <div className={cx(classes.siderWrapper, {[classes.open]: isSiderOpen})}>
+                <Sider/>
             </div>
-            <div className={classes.seasonIllustration}/>
+            <Header
+                additionalContent='content '
+                description='descripton'
+                onBurgerClick={() => setIsSiderOpen(true)}
+            />
+            <div
+                onClick={() => setIsSiderOpen(false)}
+                className={cx(classes.pad, {[classes.show]: isSiderOpen})}
+            />
         </div>
     );
 };
