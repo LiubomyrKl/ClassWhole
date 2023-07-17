@@ -22,8 +22,8 @@ const PrivateLayout: React.FC<IPrivateLayoutProps> = ({children}) => {
                 <Sider/>
             </div>
             <Header
-                additionalContent='content '
-                description='descripton'
+                additionalContent='content'
+                description='description'
                 onBurgerClick={() => setIsSiderOpen(true)}
             />
             <div
